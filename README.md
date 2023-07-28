@@ -1,2 +1,3 @@
-# library
-SImple library project 
+# Library
+
+SImple library project.

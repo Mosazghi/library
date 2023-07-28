@@ -4,10 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Library</title>
-    <link href="/dist/output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            borderWidth: {
+              8: "12px",
+            },
+            gridTemplateColumns: {
+              book: "repeat(auto-fill, minmax(300px, 1fr))",
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body class="bg-gray-200 m-0 p-0 box-border h-screen">
-    <div class="flex flex-col items-center h-full">
+  <body class="m-0 p-0 box-border min-h-screen">
+    <div class="flex flex-col h-full">
       <nav class="bg-gray-300 p-3 w-full" id="navbar">
         <h1
           class="transition-colors font-mono font-extrabold text-5xl text-center text-slate-700 hover:text-slate-900"
@@ -15,7 +29,7 @@
           The Library
         </h1>
       </nav>
-      <main class="pt-10 flex-1 flex flex-col items-center">
+      <main class="pt-10 flex-1">
         <!-- Buttons -->
         <div
           class="w-full mb-5 flex flex-col sm:flex-row sm:justify-between gap-5 px-8"
@@ -37,30 +51,42 @@
         </div>
 
         <!-- Form -->
-        <dialog id="formModal" class="modal modal-middle">
-          <form class="modal-box flex flex-col w-auto" id="form">
+        <dialog
+          id="formModal"
+          class="transition-all modal modal-middle p-5 bg-slate-300 rounded-lg"
+        >
+          <form class="modal-box flex flex-col" id="form">
             <h2 class="text-center">Add New Book</h2>
             <hr />
-            <label class="mt-3" for="title">Title: </label>
-            <input class="rounded" type="text" name="title" required />
-            <label for="author">Author: </label>
-            <input class="rounded" type="text" name="author" required />
-            <label for="pages">Number of pages: </label>
-            <input
-              class="rounded"
-              type="number"
-              name="pages"
-              required
-              min="20"
-              max="2000"
-            />
+            <div>
+              <label class="mt-3" for="title">Title: </label>
+              <br />
+              <input class="rounded" type="text" name="title" required />
+            </div>
+            <div>
+              <label for="author">Author: </label>
+              <br />
+              <input class="rounded" type="text" name="author" required />
+            </div>
+            <div>
+              <label for="pages">Number of pages: </label>
+              <br />
+              <input
+                class="rounded w-full"
+                type="number"
+                name="pages"
+                required
+                min="20"
+                max="2000"
+              />
+            </div>
             <div>
               <span class="me-2">Have you read it?</span>
               <input type="checkbox" name="read" />
             </div>
 
             <button
-              class="mt-5 border border-gray-600 bg-sky-200 hover:bg-sky-300 p-2 rounded text-white"
+              class="mt-5 border border-gray-600 bg-sky-400 hover:bg-sky-500 p-2 rounded text-white"
               type="submit"
               id="newBtn"
             >
@@ -68,17 +94,21 @@
             </button>
           </form>
           <form method="dialog" class="modal-backdrop">
-            <button>close</button>
+            <button
+              class="mt-5 border border-gray-600 bg-red-400 hover:bg-red-500 p-2 rounded text-white w-full"
+            >
+              close
+            </button>
           </form>
         </dialog>
 
         <!-- Main books -->
         <section
-          class="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10"
+          class="p-8 grid grid-cols-book gap-10"
           id="books-container"
         ></section>
       </main>
-      <footer class="p-10">
+      <footer class="p-10 text-center">
         Created by <a href="https://github.com/Mosazghi">Mosazghi</a>
       </footer>
     </div>

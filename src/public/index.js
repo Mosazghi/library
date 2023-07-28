@@ -9,7 +9,7 @@ const bookContainer = document.getElementById("books-container");
 let books = [];
 
 // Test data --------------------------------------------------
-books.push(new Book("The Hobbit", "J.R.R. Tolkien", 295, true));
+books.push(new Book("The Hobbits", "J.R.R. Tolkien", 295, true));
 books.push(new Book("The Lord of the Rings", "J.R.R. Tolkien", 1137, true));
 books.push(new Book("The Silmarillion", "J.R.R. Tolkien", 365, false));
 books.push(new Book("The Children of Húrin", "J.R.R. Tolkien", 313, true));

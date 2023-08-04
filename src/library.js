@@ -56,7 +56,7 @@ class Library extends Book {
 
   bookTemplate(book) {
     return `
-    <article class="bg-gray-200 transition-all duration-500 hover:scale-110  rounded-lg 
+    <article class="book bg-gray-200 transition-all duration-500 hover:scale-110  rounded-lg 
     flex flex-col flex-nowrap p-4 shadow-2xl border-l-8 border-amber-800"  data-bookid=${
       book.id
     }>

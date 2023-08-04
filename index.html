@@ -20,11 +20,14 @@
       };
     </script>
   </head>
-  <body class="m-0 p-0 box-border min-h-screen">
-    <div class="flex flex-col h-full">
-      <nav class="bg-gray-300 p-3 w-full" id="navbar">
+  <body
+    class="m-0 p-0 box-border min-h-screen bg-cover bg-no-repeat bg-center"
+    style="background-image: url(background.png); height: auto"
+  >
+    <div class="flex flex-col min-h-screen">
+      <nav class="p-3 w-full" id="navbar">
         <h1
-          class="transition-colors font-mono font-extrabold text-5xl text-center text-slate-700 hover:text-slate-900"
+          class="transition-colors font-mono font-extrabold text-5xl text-center text-white"
         >
           The Library
         </h1>
@@ -43,7 +46,7 @@
             New Book
           </button>
           <button
-            class="hidden bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg"
+            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg"
             id="clear-all-button"
           >
             Clear Books
@@ -53,7 +56,7 @@
         <!-- Form -->
         <dialog
           id="formModal"
-          class="transition-all modal modal-middle p-5 bg-slate-300 rounded-lg"
+          class="transition-all modal modal-middle p-5 backdrop-blur-xl bg-white/30 rounded-lg"
         >
           <form class="modal-box flex flex-col" id="form">
             <h2 class="text-center">Add New Book</h2>
@@ -86,7 +89,7 @@
             </div>
 
             <button
-              class="mt-5 border border-gray-600 bg-sky-400 hover:bg-sky-500 p-2 rounded text-white"
+              class="mt-5 p-2 text-white bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded-lg shadow-lg"
               type="submit"
               id="newBtn"
             >
@@ -95,9 +98,9 @@
           </form>
           <form method="dialog" class="modal-backdrop">
             <button
-              class="mt-5 border border-gray-600 bg-red-400 hover:bg-red-500 p-2 rounded text-white w-full"
+              class="mt-5 bg-red-400 hover:bg-red-500 p-2 text-white w-full font-bold py-2 px-4 rounded-lg shadow-lg"
             >
-              close
+              Close
             </button>
           </form>
         </dialog>
@@ -108,14 +111,17 @@
           id="books-container"
         ></section>
       </main>
-      <footer class="p-10 text-center">
-        Created by <a href="https://github.com/Mosazghi">Mosazghi</a>
+      <footer class="p-10 text-center text-teal-50">
+        Created by
+        <a class="hover:underline" href="https://github.com/Mosazghi"
+          >Mosazghi</a
+        >
       </footer>
     </div>
     <script
       src="https://kit.fontawesome.com/abd5b35b48.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="src/public/index.js"></script>
+    <script type="module" src="src/index.js"></script>
   </body>
 </html>

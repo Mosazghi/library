@@ -19,7 +19,6 @@ class Library extends Book {
   }
 
   addBook(book) {
-    console.log(this.books);
     const bookExists = this.books.some((_book) => _book.title === book.title);
 
     if (!bookExists) {
